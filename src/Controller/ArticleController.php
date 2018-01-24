@@ -15,18 +15,22 @@ use Symfony\Component\HttpFoundation\Response;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/",name="home_page")
      */
     public function homepage(){
-        return new Response('OMG! My first page already!!');
+        return $this->render('services/home.html.twig');
     }
 
     /**
      * @Route("/news/{slug}")
      */
     public function show($slug){
-        return $this->render('article/show.html.twig', [
+        $test = 'trtr';
+
+        return $this->render('article/home.html.twig', [
             'title' => ucwords(str_replace('_',' ',$slug))
         ]);
+
+
     }
 }
