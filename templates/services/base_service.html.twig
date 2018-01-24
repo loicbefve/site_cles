@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    <h1>KeyProSol</h1>
+{% endblock %}
+
+{% block nav %}
+    <ul>
+        <li>
+            <a href="{{ path('home_page') }}"> Home </a>
+        </li>
+        <li>
+            <a href="{{ path('trouve_page') }}"> J'ai trouvé </a>
+        </li>
+        <li>
+            <a href="{{ path('perdu_page') }}"> J'ai perdu </a>
+        </li>
+        <li>
+            <a href="{{ path('enregistre_page') }}"> Je m'enregistre </a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block footer %}
+    <p> Site réalisé par BEFVE Loïc</p>
+{% endblock %}

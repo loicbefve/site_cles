@@ -1,0 +1,14 @@
+{% extends 'services/base_service.html.twig' %}
+
+{% block main %}
+    <form>
+        <fieldset>
+            <legend>Se connecter:</legend>
+            Adresse mail:<br>
+            <input type="email" name="email" value="Entrez une adresse email"><br>
+            <input type="password" name="password" value="Entrez votre mot de passe"><br>
+            <input type="submit" value="Se connecter">
+        </fieldset>
+    </form>
+    <a>Créer un compte</a>
+{% endblock %}

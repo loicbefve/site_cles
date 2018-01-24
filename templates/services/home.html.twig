@@ -1,8 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'services/base_service.html.twig' %}
 
-{% block body %}
-    <h1>KeyProSol</h1>
-    <button type="button"> J'ai perdu !</button>
-    <button type="button"> J'ai trouvé !</button>
-    <button type="button"> Je m'enregistre</button>
+{% block main %}
+
+    <a href={{ path('perdu_page') }}>
+        <button type="button" > J'ai perdu !</button>
+    </a>
+    <a href={{ path('trouve_page') }}>
+        <button type="button"> J'ai trouvé !</button>
+    </a>
+    <a href="{{ path('enregistre_page') }}">
+        <button type="button"> J'enregistre un produit</button>
+    </a>
 {% endblock %}
