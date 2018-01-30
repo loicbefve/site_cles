@@ -1,6 +1,20 @@
 {% extends 'services/base_service.html.twig' %}
 
+{% block nav %}
+    <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+            <li><a href="{{ path('home_page') }}">Home</a></li>
+            <li class="active"><a href="{{ path('trouve_page') }}">J'ai trouvé</a></li>
+            <li><a href="{{ path('perdu_page') }}">J'ai perdu</a></li>
+            <li><a href="{{ path('enregistre_page') }}">Je m'enregistre</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
 {% block main %}
+    <h2> J'ai trouvé un objet:</h2>
+    <br>
+    <h3>Je me connecte avec un compte existant:</h3>
     <form>
         <fieldset>
             <legend>Se connecter:</legend>
@@ -10,6 +24,22 @@
             <input type="submit" value="Se connecter">
         </fieldset>
     </form>
+    <br>
+    <h3>Je crée un compte:</h3>
     <a>Créer un compte</a>
+    <br>
+    <h3>Mode invité:</h3>
+    <form>
+        <fieldset>
+            <legend>Informations nécéssaires:</legend>
+            Adresse mail:<br>
+            <input type="email" name="email" value="Entrez une adresse email"><br>
+            Message:<br>
+            <input type="text" name="message" value="Entrez votre message"><br>
+            RIB/IBAN:<br>
+            <input type="number" value="IBAN"><br>
+            <input type="submit" value="Envoyer">
+        </fieldset>
+    </form>
 
 {% endblock %}
