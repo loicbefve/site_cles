@@ -10,6 +10,7 @@ namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 
 class ServicesController extends AbstractController
 {
@@ -39,5 +40,12 @@ class ServicesController extends AbstractController
      */
     public function enregistre(){
         return $this->render('services/enregistre.html.twig');
+    }
+
+    /**
+     * @Route("/admin")
+     */
+    public function admin(){
+        return new Response('<html><body>Admin Page!</body></html>');
     }
 }

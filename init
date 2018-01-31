@@ -1,0 +1,1 @@
+echo "SET PASSWORD FOR root@localhost=PASSWORD('tpacpc!60');" > /root/mysql-init
