@@ -8,7 +8,7 @@ security:
         our_db_provider:
             entity:
                 class: App\Entity\User
-                property: username
+                property: email
         in_memory: { memory: ~ }
 
     firewalls:

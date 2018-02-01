@@ -1,12 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block main %}
+
     {{ form_start(form) }}
-        {{ form_row(form.username) }}
+    <fieldset>
+        <legend>S'enregistrer:  </legend>
+        {{ form_errors(form) }}
+        {{ form_row((form.lastName)) }}
+        {{ form_row(form.firstName) }}
+        {{ form_row(form.age) }}
+        {{ form_row(form.address1) }}
+        {{ form_row(form.address2) }}
+        {{ form_row(form.postalCode) }}
+        {{ form_row(form.city) }}
+        {{ form_row(form.country) }}
         {{ form_row(form.email) }}
         {{ form_row(form.plainPassword.first) }}
         {{ form_row(form.plainPassword.second) }}
 
-    <button type="submit">Register!</button>
+    <button type="submit">S'enregistrer!</button>
+    </fieldset>
     {{ form_end(form) }}
 {% endblock %}
