@@ -1,3 +1,13 @@
 .jumbotron{
     margin-bottom: 0px;
+    background-image: linear-gradient(to bottom,#3c3c3c 0,#222 100%);
+    color: whitesmoke;
+}
+
+.navbar{
+    margin-bottom: 0px;
+}
+
+nav a{
+    color: whitesmoke;
 }

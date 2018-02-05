@@ -36,13 +36,6 @@ class ServicesController extends AbstractController
     }
 
     /**
-     * @Route("/enregistre",name="enregistre_page")
-     */
-    public function enregistre(){
-        return $this->render('services/enregistre.html.twig');
-    }
-
-    /**
      * @Route("/admin")
      */
     public function admin(){

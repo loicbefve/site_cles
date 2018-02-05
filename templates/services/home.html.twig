@@ -1,24 +1,70 @@
 {% extends 'base.html.twig' %}
 
 {%  block nav %}
-    <nav class="navbar navbar-inverse">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="{{ path('home_page') }}">Home</a></li>
-            <li><a href="{{ path('trouve_page') }}">J'ai trouvé</a></li>
-            <li><a href="{{ path('perdu_page') }}">J'ai perdu</a></li>
-            <li><a href="{{ path('enregistre_page') }}">Je m'enregistre</a></li>
-        </ul>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ path('home_page') }}">KeyProSol</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{{ path('home_page') }}">Accueil</a></li>
+                <li><a href="{{ path('trouve_page') }}">J'ai trouvé</a></li>
+                <li><a href="{{ path('perdu_page') }}">J'ai perdu</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href={{ path('user_registration') }}><span class="glyphicon glyphicon-user"></span> S'enregistrer</a></li>
+                <li><a href={{ path('login') }}><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
+            </ul>
+
+        </div>
     </nav>
 {% endblock %}
 {% block main %}
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <p class="lead text-center">
+                    Bienvenue sur KeyProSol, si vous avez perdu ou trouvé un objet équipé de l'un de nos produit,
+                    vous êtes au bon endroit.<br>Laissez-vous guider:
+                </p>
+            </div>
+        </div>
+    </div>
 
-    <a href={{ path('perdu_page') }}>
-        <button type="button" > J'ai perdu !</button>
-    </a>
-    <a href={{ path('trouve_page') }}>
-        <button type="button"> J'ai trouvé !</button>
-    </a>
-    <a href="{{ path('enregistre_page') }}">
-        <button type="button"> J'enregistre un produit</button>
-    </a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="text-center col-xs-12">
+                <a href={{ path('perdu_page') }}>
+                <button class="btn-lg" type="button" > J'ai perdu !</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="text-center col-xs-12">
+                <a href={{ path('trouve_page') }}>
+                    <button class="btn-lg" type="button"> J'ai trouvé !</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="text-center col-xs-12">
+                <a href="{{ path('user_registration') }}">
+                    <button class="btn-lg" type="button"> J'enregistre un produit</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+
+
 {% endblock %}

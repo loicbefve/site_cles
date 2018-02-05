@@ -107,6 +107,11 @@ class User implements UserInterface, \Serializable
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+    private $roles;
+
 
     //**********************************************************
 
@@ -118,6 +123,13 @@ class User implements UserInterface, \Serializable
     //**********************************************************
 
     //getters:
+
+    /**
+     * @return mixed
+     */
+    public function getRoles(){
+        return array($this->roles);
+    }
 
     /**
      * @return mixed
@@ -187,10 +199,6 @@ class User implements UserInterface, \Serializable
         return $this->password;
     }
 
-    public function getRoles(){
-        return array('ROLE_USER');
-    }
-
     /**
      * @return mixed
      */
@@ -214,6 +222,13 @@ class User implements UserInterface, \Serializable
     //**********************************************
 
     //setters
+
+    /**
+     * @param mixed $roles
+     */
+    public function setRoles($roles): void{
+        $this->role = $roles;
+    }
 
     /**
      * @param mixed $age
