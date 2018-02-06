@@ -1,19 +1,39 @@
 {% extends 'base.html.twig' %}
 {% block main %}
-    {% if error %}
-        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <br>
+    <div class="contqiner-fluid">
+        <div class="row">
+            <div class="col-xs-offset-4 col-xs-4">
+                <form class="form-horizontal" action="{{ path('login') }}" method="post">
+                    <fieldset>
+                        <legend class="text-center">Se connecter:  </legend>
+                        <br>
+                        <p class="lead text-center">Vous devez avoir un compte pour accéder à cette ressource,
+                            merci de vous identifier ou de <a href="{{ path('user_registration') }}">créer un compte</a>: </p>
+                        <br>
+                        {% if error %}
+                            <div class="text-center alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        <div class="form-group">
+                            <label class="control-label" for="email">Email: </label>
+                            <input type="email" id="email" class="form-control" name="_username" value="{{ last_username }}" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="password">Password: </label>
+                            <input type="password" class="form-control" id="pwd" name="_password" />
+                        </div>
 
-    <form action="{{ path('login') }}" method="post">
-        <label for="email">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+                        {#<input type="hidden" name="_target_path" value="/home" />#}
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password" />
-
-        {#<input type="hidden" name="_target_path" value="/home" />#}
-
-
-        <button type="submit">login</button>
-    </form>
+                        <br>
+                        <div class="form-group">
+                            <div class="col-xs-offset-4 col-xs-4 text-center">
+                                <button type="submit" class="btn btn-default">Soumettre</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

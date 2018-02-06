@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -10,6 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Table(name="app_users")
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity("email")
  */
 class User implements UserInterface, \Serializable
 {
@@ -90,7 +92,9 @@ class User implements UserInterface, \Serializable
     private $country;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @var string $email
+     *
+     * @ORM\Column(name="email",type="string", length=255, unique=true)
      * @Assert\NotBlank()
      * @Assert\Email()
      */
@@ -227,7 +231,7 @@ class User implements UserInterface, \Serializable
      * @param mixed $roles
      */
     public function setRoles($roles): void{
-        $this->role = $roles;
+        $this->roles = $roles;
     }
 
     /**

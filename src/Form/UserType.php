@@ -10,13 +10,13 @@ namespace App\Form;
 
 
 use App\Entity\User;
-use function Sodium\add;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -42,8 +42,9 @@ class UserType extends AbstractType{
                 'type' => PasswordType::class,
                 'first_options' => array('label' => 'Password'),
                 'second_options' => array('label' => 'Repeated Password'),
-                'label' => 'Mot de Passe:',
-            ));
+                'label' => 'Mot de Passe:',))
+            ->add('submit', SubmitType::class, array('label' => 'Envoyer')
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver){
