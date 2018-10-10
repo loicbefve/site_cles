@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface, \Serializable
 {
-    // porperty:
+    // properties:
 
     /**
      * @ORM\Id

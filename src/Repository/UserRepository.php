@@ -16,7 +16,7 @@ class UserRepository extends ServiceEntityRepository
     /*
     public function findBySomething($value)
     {
-        return $this->createQueryBuilder('u')
+        return $th.is->createQueryBuilder('u')
             ->where('u.something = :value')->setParameter('value', $value)
             ->orderBy('u.id', 'ASC')
             ->setMaxResults(10)
